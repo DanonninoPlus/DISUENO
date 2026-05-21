@@ -432,72 +432,8 @@
   </a>
 </nav>
 
-<script>
-  // Video Modal functionality
-  const modal = document.getElementById('videoModal');
-  const showreelBtn = document.getElementById('showreelBtn');
-  const closeModal = document.getElementById('closeModal');
-  const youtubeFrame = document.getElementById('youtubeFrame');
-  
-  // CAMBIA ESTA URL por la de tu video de YouTube
-  const VIDEO_URL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
-  
-  function openModal() {
-    modal.classList.add('active');
-    youtubeFrame.src = VIDEO_URL;
-    document.body.style.overflow = 'hidden';
-  }
-  
-  function closeModalFunction() {
-    modal.classList.remove('active');
-    youtubeFrame.src = '';
-    document.body.style.overflow = '';
-  }
-  
-  showreelBtn.addEventListener('click', openModal);
-  closeModal.addEventListener('click', closeModalFunction);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModalFunction();
-  });
-  
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href === "#" || href === "") return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-  
-  // Update active state in bottom nav on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.md\\:hidden a, .hidden.md\\:flex a');
-  
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPosition = window.scrollY + 100;
+<!-- ✅ Aquí va el enlace al archivo JS externo -->
+<script src="app.js"></script>
     
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-    
-    navLinks.forEach(link => {
-      link.classList.remove('text-primary');
-      link.classList.add('text-on-surface-variant');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.remove('text-on-surface-variant');
-        link.classList.add('text-primary');
-      }
-    });
-  });
-</script>
 </body>
 </html>
