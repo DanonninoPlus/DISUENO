@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html class="dark" lang="en">
-<head>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Geist:wght@400;600&amp;display=swap" rel="preload"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Geist:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link rel="preconnect" href="https://cdn.tailwindcss.com">
+<link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Geist:wght@400;600&amp;display=swap" rel="preload">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Geist:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -97,7 +98,12 @@
           },
         },
       }
-    </script>
+    </script><style>
+      /* Critical CSS for Hero Section */
+      .hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; }
+      .hero-glow-1 { position: absolute; top: 25%; right: -5rem; width: 20rem; height: 20rem; background-color: rgba(225, 253, 255, 0.1); border-radius: 9999px; filter: blur(120px); pointer-events: none; }
+      .hero-glow-2 { position: absolute; bottom: 25%; left: -5rem; width: 20rem; height: 20rem; background-color: rgba(221, 183, 255, 0.1); border-radius: 9999px; filter: blur(120px); pointer-events: none; }
+    </style>
 <style>
     body {
       min-height: max(884px, 100dvh);
@@ -152,7 +158,7 @@
 </div>
 <!-- Project Card 1 -->
 <div class="group relative aspect-[4/5] rounded-xl overflow-hidden border border-white/5 bg-surface-container-low shadow-xl">
-<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700" data-alt="A cinematic, high-detail closeup of a futuristic digital interface with vibrant cyan glowing lines and data visualizations. The lighting is moody and dark, emphasizing the depth of the glass layers and the precision of the technical elements. The style is ultra-modern and minimalist, capturing a high-end creative technology aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSsIP7oTI04IqXotpXvoit3qyPAEwOaaUpQQ2Ab9Y9HxMaF6LdWVAU3dqlCgsuWUWVbDitp8Jo1vTc1gOqrLUGpXAbKraOx08mLZliVBKjSSxA8U1P3zLoFRqxlHs0uoYrszdXV34VAIR_3qxBzy4CNWwqcD6nxg44gEspR5F9_rroTfvj8uOuHHwRWpjEg28UsgH2yGPcOH9OyeqDPC7mpvLxFMIsC8zAGJcnDH5dolAgtB-4qA4vCnXzpCZqMYrwVi06w2wIf-f0"/>
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700" data-alt="A cinematic, high-detail closeup of a futuristic digital interface with vibrant cyan glowing lines and data visualizations. The lighting is moody and dark, emphasizing the depth of the glass layers and the precision of the technical elements. The style is ultra-modern and minimalist, capturing a high-end creative technology aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSsIP7oTI04IqXotpXvoit3qyPAEwOaaUpQQ2Ab9Y9HxMaF6LdWVAU3dqlCgsuWUWVbDitp8Jo1vTc1gOqrLUGpXAbKraOx08mLZliVBKjSSxA8U1P3zLoFRqxlHs0uoYrszdXV34VAIR_3qxBzy4CNWwqcD6nxg44gEspR5F9_rroTfvj8uOuHHwRWpjEg28UsgH2yGPcOH9OyeqDPC7mpvLxFMIsC8zAGJcnDH5dolAgtB-4qA4vCnXzpCZqMYrwVi06w2wIf-f0" fetchpriority="high" decoding="async">
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
 <div class="absolute bottom-0 p-gutter w-full">
 <div class="flex gap-2 mb-3">
@@ -164,7 +170,7 @@
 </div>
 <!-- Project Card 2 -->
 <div class="group relative aspect-[4/5] rounded-xl overflow-hidden border border-white/5 bg-surface-container-low shadow-xl">
-<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700" data-alt="Abstract fluid 3D shapes in a deep violet and electric purple color palette, suspended in a dark void. The lighting is dramatic, catching the edges of the liquid-like forms to create a sense of constant motion. This visual represents professional motion graphics and sophisticated digital branding for a creative studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8V0JXcB6rcMsnmcO81OFrxUYG9UzdT1UxsucujABgkeJA01lya6PhfREkL1_ZYTUynqp9f41UjpNys4B8gLnnrx3irpf7c26mqxobVocO8zcuFpG4pZzhlupwJ9cEQbFt1P6EuAgrtub8E830SBiXNnHDDhr3_f02DqyTwKWuCNy3FDYBsph0bcsVLnCPsh7fTvoy4s5E-iDsOjiXoExoH-1Mt4eMbgyK2C8C9DNR5qLzZ90GGlmIi7K19jGDocCEeA8qTia0cu37"/>
+<img class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700" data-alt="Abstract fluid 3D shapes in a deep violet and electric purple color palette, suspended in a dark void. The lighting is dramatic, catching the edges of the liquid-like forms to create a sense of constant motion. This visual represents professional motion graphics and sophisticated digital branding for a creative studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8V0JXcB6rcMsnmcO81OFrxUYG9UzdT1UxsucujABgkeJA01lya6PhfREkL1_ZYTUynqp9f41UjpNys4B8gLnnrx3irpf7c26mqxobVocO8zcuFpG4pZzhlupwJ9cEQbFt1P6EuAgrtub8E830SBiXNnHDDhr3_f02DqyTwKWuCNy3FDYBsph0bcsVLnCPsh7fTvoy4s5E-iDsOjiXoExoH-1Mt4eMbgyK2C8C9DNR5qLzZ90GGlmIi7K19jGDocCEeA8qTia0cu37" decoding="async" loading="lazy">
 <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
 <div class="absolute bottom-0 p-gutter w-full">
 <div class="flex gap-2 mb-3">
@@ -207,19 +213,19 @@
 </div>
 <div class="grid grid-cols-2 gap-4">
 <div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden border border-white/5 relative group">
-<img class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="A mesmerizing generative art piece with complex crystalline structures in iridescent colors. The lighting is soft and ethereal, set against a dark, minimalist background. The visual represents cutting-edge digital experiments and AI-assisted creative workflows in a cinematic dark-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB0bI_v60XZmOsac9NhY8kxEzSSECU49bsNRpysBk7N_mxnFuyyxAE3aTNgAZn_zVrcdegAwWoWU_YjfMUeK42JZ__t200qC8dNGPnBY5w4BDsT8CQ0RmyUQ36Sbi0zl3qsbGrgL1rlNx_h9sSSuX4FUu1xnjz1n7JW_2g03eQP3TqcPeOh_ge2-PGHJusQMr2D9tkQbxZLkEjLh-y_Ch1PrETL5jgArvqcDo_gOi0yfvzzzV83GSa3rQUJNT1_bGcOVCeJSPSJp_K"/>
+<img class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="A mesmerizing generative art piece with complex crystalline structures in iridescent colors. The lighting is soft and ethereal, set against a dark, minimalist background. The visual represents cutting-edge digital experiments and AI-assisted creative workflows in a cinematic dark-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB0bI_v60XZmOsac9NhY8kxEzSSECU49bsNRpysBk7N_mxnFuyyxAE3aTNgAZn_zVrcdegAwWoWU_YjfMUeK42JZ__t200qC8dNGPnBY5w4BDsT8CQ0RmyUQ36Sbi0zl3qsbGrgL1rlNx_h9sSSuX4FUu1xnjz1n7JW_2g03eQP3TqcPeOh_ge2-PGHJusQMr2D9tkQbxZLkEjLh-y_Ch1PrETL5jgArvqcDo_gOi0yfvzzzV83GSa3rQUJNT1_bGcOVCeJSPSJp_K" decoding="async" loading="lazy">
 <div class="absolute inset-0 flex items-center justify-center">
 <span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="science">science</span>
 </div>
 </div>
 <div class="aspect-square bg-surface-container-low rounded-lg overflow-hidden border border-white/5 relative group">
-<img class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="Close-up of high-end vintage computer hardware and glass optics, illuminated by a soft cyan neon glow. The atmosphere is nostalgic yet technologically advanced, emphasizing a deep appreciation for the technical craft and precision-engineered aesthetics of digital tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMJZMJAAEJRONxPT0_CT72cS6OA0Heq0z9Ns_NDkpGD6QmOxAtWsupbwwo4O4IXE1qAs-df8RVzuWN1fVBCFC-khyceJLa0x0uFIp761IlduhkYOv9WQSE4Auh2n7BRu3zbMaKx-sjDPGwBLvj7BgOq90QQ0R5EweIM-oscC7HD108-Dc_16rjd8V83Kpa7cIpRceUZew4Bt7kV3aCYYVOwo45ilz1Cgbf1YNUDM4qQkbOmkfzgQ6ZGvMz2X1S2mZFvS-4CLTkzAQn"/>
+<img class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="Close-up of high-end vintage computer hardware and glass optics, illuminated by a soft cyan neon glow. The atmosphere is nostalgic yet technologically advanced, emphasizing a deep appreciation for the technical craft and precision-engineered aesthetics of digital tools." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMJZMJAAEJRONxPT0_CT72cS6OA0Heq0z9Ns_NDkpGD6QmOxAtWsupbwwo4O4IXE1qAs-df8RVzuWN1fVBCFC-khyceJLa0x0uFIp761IlduhkYOv9WQSE4Auh2n7BRu3zbMaKx-sjDPGwBLvj7BgOq90QQ0R5EweIM-oscC7HD108-Dc_16rjd8V83Kpa7cIpRceUZew4Bt7kV3aCYYVOwo45ilz1Cgbf1YNUDM4qQkbOmkfzgQ6ZGvMz2X1S2mZFvS-4CLTkzAQn" decoding="async" loading="lazy">
 <div class="absolute inset-0 flex items-center justify-center">
 <span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="videocam">videocam</span>
 </div>
 </div>
 <div class="col-span-2 aspect-[16/9] bg-surface-container-low rounded-lg overflow-hidden border border-white/5 relative group">
-<img class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="A sprawling network of glowing blue and purple data nodes representing global connectivity and artificial intelligence. The image is vast and immersive, with a strong sense of three-dimensional space and atmospheric depth, perfectly fitting a cinematic tech-minimalist design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArPuxTOJ5PRpWsSKuKY4XZbTPyH0_IBAFhQPKWYQhsdvC-8esGqlAeYBEOHsezu9NwRYT_ox6JPGyAArQNwn9CRRfFFiauEcb-sP2tFuHnWWlwgbCHsfhp6joQ0btSVu03PqCcHFNb_1Q8By4PHDIYNECxqPKi5jTZS2rfWVyUGkwtD0NQXgy5fx0Fog_9lsbD2xlQfdQGVyZedCeWQ_NwFF4jBhWFueclC86jj0oFe-pinGeGOybS1cKHqolQkzkD1OX5cquB-qTG"/>
+<img class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" data-alt="A sprawling network of glowing blue and purple data nodes representing global connectivity and artificial intelligence. The image is vast and immersive, with a strong sense of three-dimensional space and atmospheric depth, perfectly fitting a cinematic tech-minimalist design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArPuxTOJ5PRpWsSKuKY4XZbTPyH0_IBAFhQPKWYQhsdvC-8esGqlAeYBEOHsezu9NwRYT_ox6JPGyAArQNwn9CRRfFFiauEcb-sP2tFuHnWWlwgbCHsfhp6joQ0btSVu03PqCcHFNb_1Q8By4PHDIYNECxqPKi5jTZS2rfWVyUGkwtD0NQXgy5fx0Fog_9lsbD2xlQfdQGVyZedCeWQ_NwFF4jBhWFueclC86jj0oFe-pinGeGOybS1cKHqolQkzkD1OX5cquB-qTG" decoding="async" loading="lazy">
 <div class="absolute inset-0 flex items-center justify-center">
 <span class="material-symbols-outlined text-primary/40 text-5xl" data-icon="bolt">bolt</span>
 </div>
@@ -307,5 +313,6 @@
 <span class="font-label-sm text-[10px]">Contact</span>
 </button>
 </nav>
-</body>
-</html>
+
+
+</body></html>
