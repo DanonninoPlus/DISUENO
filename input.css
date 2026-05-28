@@ -41,60 +41,6 @@
 }
 
 
-/* ========================================
-   ESTILOS GLOBALES
-   ======================================== */
-body {
-  min-height: 100dvh;
-  scroll-behavior: smooth;
-}
-
-.hero-gradient-text {
-  background: linear-gradient(135deg, #00F0FF 0%, #A25BFF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(8px);
-}
-.modal.active { display: flex; }
-.modal-content {
-  position: relative;
-  width: 90%;
-  max-width: 1000px;
-  aspect-ratio: 16 / 9;
-}
-.modal-content iframe {
-  width: 100%; height: 100%;
-  border-radius: 16px;
-}
-.close-modal {
-  position: absolute;
-  top: -40px; right: 0;
-  background: none; border: none;
-  color: white; font-size: 32px;
-  cursor: pointer; padding: 8px;
-  transition: opacity 0.3s;
-}
-.close-modal:hover { opacity: 0.7; }
-
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #1c1b1b; }
-::-webkit-scrollbar-thumb { background: #00dbe7; border-radius: 3px; }
-
-section { scroll-margin-top: 80px; }
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
