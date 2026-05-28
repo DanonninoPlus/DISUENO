@@ -4,26 +4,37 @@
 (function() {
   'use strict';
 
-  // --- Modal de YouTube ---
+  // --- Modal de YouTube con carga diferida (LA CLAVE DE LA VELOCIDAD) ---
   const modal = document.getElementById('videoModal');
   const showreelBtn = document.getElementById('showreelBtn');
   const closeModal = document.getElementById('closeModal');
-  const youtubeFrame = document.getElementById('youtubeFrame');
+  const frameContainer = document.getElementById('youtubeFrameContainer');
   
-  // 🔁 CAMBIA ESTA URL por la de tu video real de YouTube
-  const VIDEO_URL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
+  const VIDEO_URL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"; // Cambia por tu URL real
+  
+  let iframeLoaded = false;
   
   function openModal() {
     if (!modal) return;
     modal.classList.add('active');
-    if (youtubeFrame) youtubeFrame.src = VIDEO_URL;
+    
+    // Crear el iframe SOLO la primera vez que se abre el modal
+    if (!iframeLoaded && frameContainer) {
+      const iframe = document.createElement('iframe');
+      iframe.src = VIDEO_URL;
+      iframe.title = 'YouTube video player';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      frameContainer.appendChild(iframe);
+      iframeLoaded = true;
+    }
+    
     document.body.style.overflow = 'hidden';
   }
   
   function closeModalFunction() {
     if (!modal) return;
     modal.classList.remove('active');
-    if (youtubeFrame) youtubeFrame.src = '';
     document.body.style.overflow = '';
   }
   
@@ -39,7 +50,7 @@
     });
   }
   
-  // --- Smooth scroll para enlaces internos (#inicio, #proyectos, etc.) ---
+  // --- Smooth scroll para enlaces internos ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
