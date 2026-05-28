@@ -5,83 +5,12 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>DISUEÑO | Portafolio Creativo</title>
 
-<!-- Material Icons (única dependencia externa) -->
+<!-- Material Icons (única dependencia externa - podemos eliminarla después) -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 
 <!-- Tailwind CSS (incluye tus fuentes locales y todos los estilos) -->
 <link rel="stylesheet" href="output.css">
 
-<!-- ✅ ESTILOS RECUPERADOS (modal, scrollbar, hero-gradient-text) -->
-<style>
-    body {
-      min-height: 100dvh;
-      scroll-behavior: smooth;
-    }
-    .hero-gradient-text {
-      background: linear-gradient(135deg, #00F0FF 0%, #A25BFF 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.95);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(8px);
-    }
-    .modal.active {
-      display: flex;
-    }
-    .modal-content {
-      position: relative;
-      width: 90%;
-      max-width: 1000px;
-      aspect-ratio: 16 / 9;
-    }
-    .modal-content iframe {
-      width: 100%;
-      height: 100%;
-      border-radius: 16px;
-    }
-    .close-modal {
-      position: absolute;
-      top: -40px;
-      right: 0;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 32px;
-      cursor: pointer;
-      padding: 8px;
-      transition: opacity 0.3s;
-    }
-    .close-modal:hover {
-      opacity: 0.7;
-    }
-    /* Scrollbar personalizado */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1c1b1b;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #00dbe7;
-      border-radius: 3px;
-    }
-    /* Smooth section transitions */
-    section {
-      scroll-margin-top: 80px;
-    }
-</style>
 </head>
 <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 
@@ -119,8 +48,7 @@
 </header>
 
 <main>
-  <!-- SECCIÓN 1: INICIO / HERO - CON ESPACIADO ORIGINAL RESTAURADO -->
-  <section id="inicio" class="relative min-h-screen flex flex-col justify-center px-margin-mobile pt-32 pb-16 overflow-hidden">
+  <section id="inicio" class="relative min-h-screen flex flex-col justify-center px-margin-mobile overflow-hidden md:pt-32 md:min-h-screen md:pb-16 pt-20 min-h-[75vh] pb-12">
     <div class="absolute top-1/4 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
     <div class="absolute bottom-1/4 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-[120px] pointer-events-none"></div>
     
@@ -154,7 +82,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 2: PROYECTOS DESTACADOS - IGUAL QUE ANTES -->
   <section id="proyectos" class="px-0 md:px-margin-mobile py-20 space-y-gutter">
     <div class="flex justify-between items-end mb-10">
       <h2 class="font-headline text-headline-md text-on-surface">Proyectos destacados</h2>
@@ -208,7 +135,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 3: SOBRE MÍ - IGUAL QUE ANTES -->
   <section id="sobre-mi" class="bg-surface-container-lowest px-6 md:px-margin-mobile py-24 relative">
     <div class="max-w-md mx-auto">
       <span class="font-label-sm text-label-sm text-primary mb-6 block uppercase tracking-[0.2em]">Perfil</span>
@@ -233,7 +159,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 4: PLAYGROUND -->
   <section id="playground" class="px-margin-mobile py-24">
     <div class="mb-12">
       <p class="font-label-sm text-label-sm text-on-surface-variant mb-2">Experimentos</p>
@@ -261,7 +186,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 5: PROCESO -->
   <section id="proceso" class="px-margin-mobile py-24 bg-surface-container-low">
     <div class="max-w-3xl mx-auto">
       <span class="font-label-sm text-label-sm text-primary mb-6 block uppercase tracking-[0.2em] text-center">Metodología</span>
@@ -292,7 +216,6 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 6: CONTACTO -->
   <section id="contacto" class="px-margin-mobile py-32 text-center">
     <h2 class="font-headline text-headline-lg-mobile text-on-surface mb-6">¿Tienes un proyecto en mente?</h2>
     <p class="font-body text-body-md text-on-surface-variant mb-12 max-w-xs mx-auto">Una animación, un sitio web, una identidad visual — Me gusta entender bien cada proyecto antes de arrancar, y la primera conversación no cuesta nada.</p>
