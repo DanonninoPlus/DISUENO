@@ -15,14 +15,18 @@
   
   function openModal() {
     if (!modal) return;
-    modal.classList.add('active');
+    // Quitamos 'hidden' y añadimos 'flex' para que se muestre en el centro
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
     if (youtubeFrame) youtubeFrame.src = VIDEO_URL;
     document.body.style.overflow = 'hidden';
   }
   
   function closeModalFunction() {
     if (!modal) return;
-    modal.classList.remove('active');
+    // Quitamos 'flex' y regresamos 'hidden' para ocultarlo
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
     if (youtubeFrame) youtubeFrame.src = '';
     document.body.style.overflow = '';
   }
