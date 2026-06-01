@@ -1,16 +1,16 @@
 // app.js
-// Toda la funcionalidad de DISUEÑO portafolio
+// Toda la funcionalidad de DISUEÑO portafafolio
 
 (function() {
   'use strict';
 
-  // --- Modal de YouTube ---
+  // --- Modal de YouTube (eliminado/deshabilitado mientras probamos)
+  /*
   const modal = document.getElementById('videoModal');
   const showreelBtn = document.getElementById('showreelBtn');
   const closeModal = document.getElementById('closeModal');
   const youtubeFrame = document.getElementById('youtubeFrame');
   
-  // 🔁 CAMBIA ESTA URL por la de tu video real de YouTube
   const VIDEO_URL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
   
   function openModal() {
@@ -38,8 +38,9 @@
       if (e.target === modal) closeModalFunction();
     });
   }
+  */
   
-  // --- Smooth scroll para enlaces internos (#inicio, #proyectos, etc.) ---
+  // --- Smooth scroll para enlaces internos ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
