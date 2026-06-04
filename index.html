@@ -14,12 +14,21 @@
         will-change: transform;             /* Ayuda a Safari a preparar la capa */
       }
     
-      /* Evita FOIT (Flash of Invisible Text) para todas las fuentes */
-      * {
-        font-display: swap !important;      /* Solo si usas @font-face, si no, no hace falta */
-      }
-
     </style>
+
+<!-- Preload de las fuentes críticas (solo los pesos que usas arriba del pliegue) -->
+<link rel="preload" href="./fonts/hanken-grotesk-v12-latin_latin-ext-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/hanken-grotesk-v12-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./fonts/geist-v5-latin_latin-ext-400.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Si también usas Material Icons (local), agrega esto (ajusta la ruta real) -->
+<link rel="preload" href="./fonts/material-symbols-outlined.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Opcional: precarga crítica de CSS (carga output.css antes pero no bloquea el render) -->
+<link rel="preload" href="output.css" as="style">
+<link rel="stylesheet" href="output.css">
+
+
   
   <!-- Material Icons local (sin dependencia externa) -->
   <link rel="stylesheet" href="material-icons.css">
