@@ -6,10 +6,19 @@
   <title>DISUEÑO | Portafolio Creativo</title>
 
     <style>
-    body {
-      text-rendering: optimizeSpeed;
-      -webkit-font-smoothing: antialiased;
-    }
+
+      body {
+        text-rendering: optimizeSpeed;
+        -webkit-font-smoothing: antialiased;
+        transform: translateZ(0);           /* Fuerza aceleración GPU */
+        will-change: transform;             /* Ayuda a Safari a preparar la capa */
+      }
+    
+      /* Evita FOIT (Flash of Invisible Text) para todas las fuentes */
+      * {
+        font-display: swap !important;      /* Solo si usas @font-face, si no, no hace falta */
+      }
+
     </style>
   
   <!-- Material Icons local (sin dependencia externa) -->
