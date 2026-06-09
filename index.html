@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html class="dark" lang="es">
-<head>
+
+  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>DISUEÑO | Portafolio Creativo</title>
 
-    <style>
+  <!-- ESTILOS CRÍTICOS (para que se vea algo INMEDIATAMENTE) -->
+  <style>
+    /* Solo lo necesario para que el header y el texto principal se vean al instante */
+    body {
+      background-color: #0B0010;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Hanken Grotesk', 'Geist', sans-serif;
+    }
+    .fixed { position: fixed; top: 0; width: 100%; z-index: 50; background-color: rgba(11, 0, 16, 0.8); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    .relative { position: relative; }
+    .flex { display: flex; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .py-unit { padding-top: 8px; padding-bottom: 8px; }
+    .max-w-container-max { max-width: 1440px; margin-left: auto; margin-right: auto; }
+    .h-16 { height: 4rem; }
+    .text-primary-fixed-dim { color: #00dbe7; }
+    .font-headline { font-family: 'Hanken Grotesk', sans-serif; }
 
-      body {
-        text-rendering: optimizeSpeed;
-        -webkit-font-smoothing: antialiased;
-        transform: translateZ(0);           /* Fuerza aceleración GPU */
-        will-change: transform;             /* Ayuda a Safari a preparar la capa */
-      }
-    
-    </style>
+  </style>
 
-<!-- Preload de las fuentes críticas (solo los pesos que usas arriba del pliegue) -->
-<link rel="preload" href="./fonts/hanken-grotesk-v12-latin_latin-ext-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./fonts/hanken-grotesk-v12-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="./fonts/geist-v5-latin_latin-ext-400.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- PRECARGA DE FUENTES (solo las que se ven nada más cargar) -->
+  <link rel="preload" href="./fonts/hanken-grotesk-v12-latin_latin-ext-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./fonts/hanken-grotesk-v12-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Si también usas Material Icons (local), agrega esto (ajusta la ruta real) -->
-<link rel="preload" href="./fonts/material-symbols-outlined.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- CARGA NO BLOQUEANTE de los CSS pesados -->
+  <!-- Este truco hace que Safari descargue output.css en segundo plano, sin bloquear el renderizado -->
+  <link rel="preload" href="output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="output.css"></noscript>
 
-<!-- Opcional: precarga crítica de CSS (carga output.css antes pero no bloquea el render) -->
-<link rel="preload" href="output.css" as="style">
-<link rel="stylesheet" href="output.css">
+  <!-- Los iconos también se pueden cargar de forma no bloqueante -->
+  <link rel="preload" href="material-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="material-icons.css"></noscript>
 
-
-  
-  <!-- Material Icons local (sin dependencia externa) -->
-  <link rel="stylesheet" href="material-icons.css">
-
-  <!-- Tailwind CSS (fuentes locales + estilos) -->
-  <link rel="stylesheet" href="output.css">
+  <!-- Opcional: Forzar aceleración GPU (ya lo tenías, lo dejo como estaba) -->
+  <style>
+    body {
+      text-rendering: optimizeSpeed;
+      -webkit-font-smoothing: antialiased;
+      transform: translateZ(0);
+      will-change: transform;
+    }
+  </style>
 </head>
-<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+  
+  <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 
   <!-- TopAppBar -->
   <header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5 shadow-[0_0_20px_rgba(0,219,231,0.05)]">
