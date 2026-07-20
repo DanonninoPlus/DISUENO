@@ -1,62 +1,111 @@
 <!DOCTYPE html>
 <html class="dark" lang="es">
-
-  <head>
+<head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <title>DISUEÑO | Portafolio Creativo</title>
 
-  <!-- ESTILOS CRÍTICOS (para que se vea algo INMEDIATAMENTE) -->
+  <!-- ESTILOS CRÍTICOS (SÓLO LO ESENCIAL PARA RENDERIZADO RÁPIDO) -->
   <style>
-    /* Solo lo necesario para que el header y el texto principal se vean al instante */
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
       background-color: #0B0010;
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Hanken Grotesk', 'Geist', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-bottom: 100px;
     }
-    .fixed { position: fixed; top: 0; width: 100%; z-index: 50; background-color: rgba(11, 0, 16, 0.8); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    
+    /* Scroll suave para toda la página */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Ajuste para secciones con header fijo */
+    section {
+      scroll-margin-top: 80px;
+    }
+    
+    /* Clases críticas para el renderizado inicial */
+    .fixed { position: fixed; top: 0; width: 100%; z-index: 50; }
     .relative { position: relative; }
     .flex { display: flex; }
     .items-center { align-items: center; }
     .justify-between { justify-content: space-between; }
     .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
     .py-unit { padding-top: 8px; padding-bottom: 8px; }
-    .max-w-container-max { max-width: 1440px; margin-left: auto; margin-right: auto; }
     .h-16 { height: 4rem; }
     .text-primary-fixed-dim { color: #00dbe7; }
     .font-headline { font-family: 'Hanken Grotesk', sans-serif; }
+    .bg-background { background-color: #0B0010; }
+    .text-on-surface { color: #EBEAED; }
+    .text-on-surface-variant { color: #b9cacb; }
+    .text-headline-lg-mobile { font-size: 32px; line-height: 1.2; font-weight: 600; }
+    .text-label-sm { font-size: 12px; line-height: 1; letter-spacing: 0.1em; font-weight: 600; }
+    .w-full { width: 100%; }
+    .z-50 { z-index: 50; }
+    .border-b { border-bottom-width: 1px; }
+    .border-white\/5 { border-color: rgba(255,255,255,0.05); }
+    
+    /* Optimización para imágenes */
+    img, video { 
+      max-width: 100%; 
+      height: auto; 
+      display: block;
+    }
+    
+    /* Mejora de rendimiento en móvil */
+    @media (max-width: 768px) {
+      .backdrop-blur-xl,
+      .backdrop-blur-2xl,
+      .backdrop-blur-md {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+      .bg-background\/80 {
+        background-color: #0B0010 !important;
+      }
+      .bg-surface-container-high\/80 {
+        background-color: #1A1A1A !important;
+      }
+      .shadow-2xl {
+        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5) !important;
+      }
+    }
 
+    /* Animación suave para hover en móvil */
+    @media (hover: hover) {
+      .hover-lift:hover {
+        transform: translateY(-4px);
+        transition: transform 0.3s ease;
+      }
+    }
   </style>
 
-  <!-- PRECARGA DE FUENTES (solo las que se ven nada más cargar) -->
+  <!-- PRECARGA DE FUENTES CRÍTICAS -->
   <link rel="preload" href="./fonts/hanken-grotesk-v12-latin_latin-ext-600.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./fonts/hanken-grotesk-v12-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CARGA NO BLOQUEANTE de los CSS pesados -->
-  <!-- Este truco hace que Safari descargue output.css en segundo plano, sin bloquear el renderizado -->
-  <link rel="preload" href="output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <!-- MATERIAL SYMBOLS (local) -->
+  <link rel="stylesheet" href="material-icons.css">
+
+  <!-- CARGA NO BLOQUEANTE DE CSS -->
+  <link rel="stylesheet" href="output.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="output.css"></noscript>
-
-  <!-- Los iconos también se pueden cargar de forma no bloqueante -->
-  <link rel="preload" href="material-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="material-icons.css"></noscript>
-
-  <!-- Opcional: Forzar aceleración GPU (ya lo tenías, lo dejo como estaba) -->
-  <style>
-    body {
-      text-rendering: optimizeSpeed;
-      -webkit-font-smoothing: antialiased;
-      transform: translateZ(0);
-      will-change: transform;
-    }
-  </style>
 </head>
-  
-  <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 
-  <!-- TopAppBar -->
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- TOP APP BAR -->
   <header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/5 shadow-[0_0_20px_rgba(0,219,231,0.05)]">
-    <div class="relative flex justify-between items-center px-6 md:px-margin-mobile py-unit max-w-container-max mx-auto h-16">
+    <div class="relative flex justify-between items-center px-6 md:px-12 lg:px-20 py-unit max-w-7xl mx-auto h-16">
       <div class="flex items-center gap-2 z-10">
         <span class="material-symbols-outlined text-primary-fixed-dim text-2xl">blur_on</span>
         <h1 class="font-headline text-headline-md tracking-widest text-on-surface">DISUEÑO</h1>
@@ -69,14 +118,14 @@
       </nav>
       <div class="hidden md:block w-[120px]"></div>
       <div class="flex items-center md:hidden">
-        <span class="material-symbols-outlined text-primary-fixed-dim">menu</span>
+        <span class="material-symbols-outlined text-primary-fixed-dim cursor-pointer" id="menuToggle">menu</span>
       </div>
     </div>
   </header>
 
   <main>
     <!-- SECCIÓN HERO -->
-    <section id="inicio" class="relative min-h-screen flex flex-col justify-center px-margin-mobile overflow-hidden md:pt-32 md:min-h-screen md:pb-16 pt-20 min-h-[75vh] pb-12">
+    <section id="inicio" class="relative min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 overflow-hidden md:pt-32 md:min-h-screen md:pb-16 pt-20 min-h-[75vh] pb-12">
       <div class="absolute top-1/4 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div class="absolute bottom-1/4 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-[120px] pointer-events-none"></div>
       <div class="relative z-10 max-w-4xl mx-auto text-center md:text-left md:mx-0 md:ml-20 lg:ml-32">
@@ -85,7 +134,7 @@
           Diseñando experiencias digitales que 
           <span class="text-disueno-cyan">mueven</span>, 
           <span class="text-disueno-purple">interactúan</span> 
-          <span class="hero-gradient-text">e inspiran</span>.
+          <span class="text-white">e inspiran</span>.
         </h1>
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <a href="#proyectos" class="bg-primary-fixed-dim text-on-primary-fixed font-label-sm text-label-sm py-4 px-8 rounded-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,219,231,0.2)] hover:shadow-[0_0_30px_rgba(0,219,231,0.4)] transition-all">
@@ -101,7 +150,7 @@
     </section>
 
     <!-- PROYECTOS -->
-    <section id="proyectos" class="px-0 md:px-margin-mobile py-20 space-y-gutter">
+    <section id="proyectos" class="px-6 md:px-12 lg:px-20 py-20 space-y-8">
       <div class="flex justify-between items-end mb-10">
         <h2 class="font-headline text-headline-md text-on-surface">Proyectos destacados</h2>
       </div>
@@ -117,8 +166,8 @@
                class="w-full h-full object-cover grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700" 
                alt="Invitación digital Carolina y Luis">
           <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 p-gutter w-full">
-            <div class="flex gap-2 mb-3">
+          <div class="absolute bottom-0 p-6 w-full">
+            <div class="flex gap-2 mb-3 flex-wrap">
               <span class="px-3 py-1 border border-primary-fixed-dim/30 rounded-full font-label-sm text-[14px] text-primary-fixed-dim bg-primary/5 backdrop-blur-md">Invitación Digital</span>
               <span class="px-3 py-1 border border-white/20 rounded-full font-label-sm text-[14px] text-on-surface-variant">2026</span>
             </div>
@@ -139,8 +188,8 @@
                class="w-full h-full object-cover grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700" 
                alt="Portal institucional DGCIDCIENCIA">
           <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 p-gutter w-full">
-            <div class="flex gap-2 mb-3">
+          <div class="absolute bottom-0 p-6 w-full">
+            <div class="flex gap-2 mb-3 flex-wrap">
               <span class="px-3 py-1 border border-secondary/30 rounded-full font-label-sm text-[14px] text-secondary bg-secondary/5 backdrop-blur-md">Portal de información</span>
               <span class="px-3 py-1 border border-white/20 rounded-full font-label-sm text-[14px] text-on-surface-variant">2025 - 2026</span>
             </div>
@@ -154,7 +203,7 @@
     </section>
 
     <!-- SOBRE MÍ -->
-    <section id="sobre-mi" class="bg-surface-container-lowest px-6 md:px-margin-mobile py-24 relative">
+    <section id="sobre-mi" class="bg-surface-container-lowest px-6 md:px-12 lg:px-20 py-24 relative">
       <div class="max-w-md mx-auto">
         <span class="font-label-sm text-label-sm text-primary mb-6 block uppercase tracking-[0.2em]">Perfil</span>
         <h2 class="font-headline text-headline-lg-mobile text-on-surface mb-10">Enfoque híbrido.</h2>
@@ -179,7 +228,7 @@
     </section>
 
     <!-- PLAYGROUND -->
-    <section id="playground" class="px-margin-mobile py-24">
+    <section id="playground" class="px-6 md:px-12 lg:px-20 py-24">
       <div class="mb-12">
         <p class="font-label-sm text-label-sm text-on-surface-variant mb-2">Experimentos</p>
         <h2 class="font-headline text-headline-md text-on-surface">Playground</h2>
@@ -207,7 +256,7 @@
     </section>
 
     <!-- PROCESO -->
-    <section id="proceso" class="px-margin-mobile py-24 bg-surface-container-low">
+    <section id="proceso" class="px-6 md:px-12 lg:px-20 py-24 bg-surface-container-low">
       <div class="max-w-3xl mx-auto">
         <span class="font-label-sm text-label-sm text-primary mb-6 block uppercase tracking-[0.2em] text-center">Metodología</span>
         <h2 class="font-headline text-headline-lg text-on-surface mb-16 text-center">Cómo trabajo</h2>
@@ -238,7 +287,7 @@
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="px-margin-mobile py-32 text-center">
+    <section id="contacto" class="px-6 md:px-12 lg:px-20 py-32 text-center">
       <h2 class="font-headline text-headline-lg-mobile text-on-surface mb-6">¿Tienes un proyecto en mente?</h2>
       <p class="font-body text-body-md text-on-surface-variant mb-12 max-w-xs mx-auto">Una animación, un sitio web, una identidad visual — Me gusta entender bien cada proyecto antes de arrancar, y la primera conversación no cuesta nada.</p>
       <div class="flex justify-center gap-8 mb-20">
@@ -263,8 +312,8 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="w-full py-10 px-margin-mobile bg-background border-t border-white/5">
-    <div class="flex flex-col items-center gap-6 max-w-container-max mx-auto">
+  <footer class="w-full py-10 px-6 md:px-12 lg:px-20 bg-background border-t border-white/5">
+    <div class="flex flex-col items-center gap-6 max-w-7xl mx-auto">
       <div class="flex gap-6">
         <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Instagram</a>
         <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-all duration-300" href="https://www.linkedin.com/in/fabian-ivan-risueno/">LinkedIn</a>
@@ -294,6 +343,6 @@
     </a>
   </nav>
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
