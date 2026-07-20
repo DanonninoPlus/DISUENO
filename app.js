@@ -1,66 +1,43 @@
-// app.js
-// Toda la funcionalidad de DISUEÑO portafafolio
-
+// app.js - Versión optimizada para móvil
 (function() {
   'use strict';
 
-  // --- Modal de YouTube (eliminado/deshabilitado mientras probamos)
-  /*
-  const modal = document.getElementById('videoModal');
-  const showreelBtn = document.getElementById('showreelBtn');
-  const closeModal = document.getElementById('closeModal');
-  const youtubeFrame = document.getElementById('youtubeFrame');
-  
-  const VIDEO_URL = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1";
-  
-  function openModal() {
-    if (!modal) return;
-    modal.classList.add('active');
-    if (youtubeFrame) youtubeFrame.src = VIDEO_URL;
-    document.body.style.overflow = 'hidden';
-  }
-  
-  function closeModalFunction() {
-    if (!modal) return;
-    modal.classList.remove('active');
-    if (youtubeFrame) youtubeFrame.src = '';
-    document.body.style.overflow = '';
-  }
-  
-  if (showreelBtn) {
-    showreelBtn.addEventListener('click', openModal);
-  }
-  if (closeModal) {
-    closeModal.addEventListener('click', closeModalFunction);
-  }
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModalFunction();
-    });
-  }
-  */
-  
-  // --- Smooth scroll para enlaces internos ---
+  // --- Smooth scroll con corrección para header fijo ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
       if (href === "#" || href === "") return;
+      
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+        
+        // Calcular offset del header (80px)
+        const headerOffset = 80;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
       }
     });
   });
-  
-  // --- Resaltar enlace activo en navegación según scroll ---
+
+  // --- Resaltar enlace activo (optimizado con debounce) ---
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.md\\:hidden a, .hidden.md\\:flex a');
+  
+  // Solo seleccionar enlaces que realmente existen en la navegación visible
+  const navLinks = document.querySelectorAll('.hidden.md\\:flex a, .md\\:hidden a');
   
   if (sections.length && navLinks.length) {
-    window.addEventListener('scroll', () => {
+    // Función con debounce para mejorar rendimiento
+    let scrollTimeout;
+    
+    function updateActiveLink() {
       let current = '';
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 120; // Ajuste para header
       
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
@@ -78,7 +55,53 @@
           link.classList.add('text-primary');
         }
       });
+    }
+    
+    window.addEventListener('scroll', function() {
+      if (scrollTimeout) {
+        cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = requestAnimationFrame(updateActiveLink);
+    });
+    
+    // Ejecutar una vez al cargar
+    updateActiveLink();
+  }
+
+  // --- Menú móvil (si lo agregas en el futuro) ---
+  const menuToggle = document.querySelector('.md\\:hidden .material-symbols-outlined');
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      // Aquí puedes agregar la funcionalidad del menú móvil
+      console.log('Menú móvil clickeado');
     });
   }
 
+  // --- Detectar si es dispositivo móvil y optimizar ---
+  function isMobile() {
+    return window.innerWidth < 768;
+  }
+
+  // Desactivar efectos pesados en móvil
+  if (isMobile()) {
+    // Reducir la calidad de los blur effects (ya se maneja con CSS)
+    document.documentElement.classList.add('is-mobile');
+  }
+
+  // --- Reaccionar a cambios de tamaño ---
+  let resizeTimeout;
+  window.addEventListener('resize', function() {
+    if (resizeTimeout) {
+      cancelAnimationFrame(resizeTimeout);
+    }
+    resizeTimeout = requestAnimationFrame(function() {
+      if (isMobile()) {
+        document.documentElement.classList.add('is-mobile');
+      } else {
+        document.documentElement.classList.remove('is-mobile');
+      }
+    });
+  });
+
+  console.log('✅ DISUEÑO - Portafolio cargado correctamente');
 })();
