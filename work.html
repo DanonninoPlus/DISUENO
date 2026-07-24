@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exclusive Projects | Disueño Portfolio</title>
+<!-- Preconnect for performance -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Hanken+Grotesk:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#fff6e4",
+                    "outline": "#849495",
+                    "surface-dim": "#131313",
+                    "on-primary-fixed": "#002022",
+                    "tertiary-container": "#fed83a",
+                    "error-container": "#93000a",
+                    "inverse-on-surface": "#313030",
+                    "error": "#ffb4ab",
+                    "on-background": "#e5e2e1",
+                    "outline-variant": "#3a494b",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-primary": "#00696f",
+                    "on-tertiary-container": "#725e00",
+                    "tertiary-fixed-dim": "#e8c423",
+                    "on-tertiary": "#3b2f00",
+                    "on-secondary-fixed-variant": "#6900b3",
+                    "on-primary": "#00363a",
+                    "tertiary-fixed": "#ffe173",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#00f2ff",
+                    "surface-bright": "#3a3939",
+                    "primary": "#e1fdff",
+                    "secondary-fixed": "#f0dbff",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#6f00be",
+                    "surface-container": "#201f1f",
+                    "on-secondary-fixed": "#2c0051",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#554500",
+                    "surface-variant": "#353534",
+                    "on-secondary": "#490080",
+                    "on-tertiary-fixed": "#221b00",
+                    "primary-fixed-dim": "#00dbe7",
+                    "on-surface-variant": "#b9cacb",
+                    "surface-container-low": "#1c1b1b",
+                    "background": "#131313",
+                    "surface": "#131313",
+                    "on-secondary-container": "#d6a9ff",
+                    "primary-fixed": "#74f5ff",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-primary-container": "#006a71",
+                    "secondary": "#ddb7ff",
+                    "surface-container-lowest": "#0e0e0e",
+                    "secondary-fixed-dim": "#ddb7ff",
+                    "surface-tint": "#00dbe7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "24px",
+                    "container-max": "1440px",
+                    "gutter": "32px",
+                    "unit": "8px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "body-md": ["Geist"],
+                    "body-lg": ["Geist"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Geist"],
+                    "headline-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 242, 255, 0.4);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+        }
+        .perspective-container {
+            perspective: 1000px;
+        }
+        .magnetic-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- Magnetic Glow Background -->
+<div class="magnetic-glow" id="glow-follow"></div>
+<!-- Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/10">
+<nav class="flex justify-between items-center px-margin-desktop py-6 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-on-surface">Disueño</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-primary border-b border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Work</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Labs</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Philosophy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all duration-300">Connect</button>
+</nav>
+</header>
+<main class="pt-40 pb-32">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-24 md:mb-32">
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-[64px] md:text-display-lg leading-tight mb-8" fetchpriority="high">
+                    Project <br/>Archives
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl opacity-80">
+                    A curated selection of precision-engineered interfaces and cinematic digital experiences where code meets high-end aesthetic craft.
+                </p>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Project 1: Aether Interface -->
+<div class="group perspective-container">
+<div class="glass-card rounded-xl overflow-hidden flex flex-col h-full">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic, high-detail UI concept for Aether Interface featuring translucent glass panels and microscopic data visualizations in neon cyan and deep space black. The scene is illuminated by soft, volumetric lighting with a cool atmospheric haze. The aesthetic is ultra-premium, technical, and minimalist, echoing a futuristic digital control center." decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu1QSjWGh7yW6i3arEZnxHQzSxNb6Fg0uITcwWO2vmzIyo_m5e4gdQZkEH6CPZZKrSnIfmgEgWVawmfypnvVXUb0QUNf3x6TQmh7G2WledwuMFqk-92FagxgRhK8exjzhj3piu-V1OjvFsigYK8tdVAYBZ2pK3s8cGAJMvU6UwASGjFGN8ZNYQjkrUiN-dJ2K66yDZLwaYhLB2pCw1WZxzygA_SG-3KTI1o_JUy_SsRqdXk7sTAjuTkitkMJJXwrDTQK4xG5ywpmf4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60"></div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-2 py-1 border border-primary-fixed-dim text-primary-fixed-dim font-label-sm text-label-sm rounded uppercase">Interface</span>
+<span class="px-2 py-1 border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm rounded uppercase">2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Aether Interface</h3>
+<p class="font-body-md text-body-md text-on-surface-variant/70">Exploring the intersection of fluid motion and technical precision in digital workspace design.</p>
+</div>
+</div>
+</div>
+<!-- Project 2: Lumina Brand System -->
+<div class="group perspective-container">
+<div class="glass-card rounded-xl overflow-hidden flex flex-col h-full md:mt-12">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An abstract motion design background for Lumina Brand System showing flowing silk-like digital textures in iridescent silver and deep purple. The lighting is low-key with intense specular highlights creating a sense of three-dimensional depth and premium materiality. The visual style is cinematic, sophisticated, and artistic." decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH5pt7vZRGJFKHMwCYQ6EO2E9Ms_p9w6j4umx6PL5vQBcNMrsZlCTOQ9_2JHIcJ4Kl2JgFo6p2mOqSbI5b0KKsgBmDDKt8XmL7oqSG6ZhuTJv7DlOYoDaEhVwmwVkIU7xDqVm9RDm_acbS83cM5FM8GRsQNlyS0lHcP5AzwWkXwPM-nuuOCoO_2S7jRR46ZQqwxzSWgOM8kI2hY6Cj3bO-VvKKMbHi6Naeft2_xZsgA4RYfLbEIi7twFqTnxs2gY8c7oED8iVsn9BN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60"></div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-2 py-1 border border-primary-fixed-dim text-primary-fixed-dim font-label-sm text-label-sm rounded uppercase">Branding</span>
+<span class="px-2 py-1 border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm rounded uppercase">Experimental</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Lumina Brand System</h3>
+<p class="font-body-md text-body-md text-on-surface-variant/70">A generative visual identity system built on fluid dynamics and light-based typography.</p>
+</div>
+</div>
+</div>
+<!-- Project 3: Nova OS -->
+<div class="group perspective-container">
+<div class="glass-card rounded-xl overflow-hidden flex flex-col h-full">
+<div class="aspect-[4/5] overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A minimalist operating system dashboard concept for Nova OS with floating widgets and micro-interactions. The color palette consists of deep slate, charcoal, and vibrant electric cyan accents. The composition is clean with generous negative space and sharp typography, set in a dark studio environment with subtle lens flare effects." decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS-_3WpQNISpDoOdAwypCWaHPwj0flJYgl67GfCAFkgTsG0uezLTQQjBq3BRCBJk2WCYVoBMgcZKv04UmFuGQ4vTBVOtZR_HnI6obEO-EyadtMAqYMHu6PphdcKj3jclsiWhhVlG0NG38UKJgCpBvSkbezG_q7pvD4cdgiQZOl3vM17ZG6PFkF6noibkeAYLm6X6r4d2zT7XGTSpB07vdKRchIyMMl1dNm8qCM1uL7W_mYnbDck50Q1azaRry5j2G8pYDP2OhPnCSa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60"></div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-2 py-1 border border-primary-fixed-dim text-primary-fixed-dim font-label-sm text-label-sm rounded uppercase">OS Design</span>
+<span class="px-2 py-1 border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm rounded uppercase">Archive</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Nova OS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant/70">Redefining the desktop experience through spatial awareness and minimalist interaction patterns.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="mt-32 max-w-container-max mx-auto px-margin-desktop text-center">
+<div class="py-24 glass-card rounded-3xl relative overflow-hidden">
+<!-- Background Decoration -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 blur-[100px] rounded-full"></div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-8">Ready to see more?</h2>
+<div class="flex justify-center">
+<a class="group relative px-10 py-5 bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm uppercase tracking-[0.2em] overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,242,255,0.3)] flex items-center gap-3" href="https://behance.net" target="_blank">
+<span class="relative z-10">View Full Gallery on Behance</span>
+<span class="material-symbols-outlined relative z-10 text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-12 border-t border-outline-variant/10 bg-background">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-gutter">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tighter">Disueño</div>
+<div class="flex gap-8 items-center font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Behance</a>
+<a class="hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Instagram</a>
+<a class="hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Dribbble</a>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2024 Disueño. All rights reserved.</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Mouse Follower Glow
+        const glow = document.getElementById('glow-follow');
+        window.addEventListener('mousemove', (e) => {
+            const x = e.clientX - 150;
+            const y = e.clientY - 150;
+            glow.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // Simple Intersection Observer for Fade-in effects
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
+            observer.observe(el);
+        });
+    </script>
+</body></html>
