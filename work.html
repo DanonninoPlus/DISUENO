@@ -167,40 +167,109 @@
 <!-- ANTERIOR// <section class="max-w-container-max mx-auto px-margin-desktop">-->
 <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Project 1: Aether Interface -->
+
+
+<!-- Project 1: Animación de Logo - VERSIÓN CON VIDEO -->
 <div class="group perspective-container">
-<div class="glass-card rounded-xl overflow-hidden flex flex-col h-full">
-<div class="aspect-[4/5] overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic, high-detail UI concept for Aether Interface featuring translucent glass panels and microscopic data visualizations in neon cyan and deep space black. The scene is illuminated by soft, volumetric lighting with a cool atmospheric haze. The aesthetic is ultra-premium, technical, and minimalist, echoing a futuristic digital control center." decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu1QSjWGh7yW6i3arEZnxHQzSxNb6Fg0uITcwWO2vmzIyo_m5e4gdQZkEH6CPZZKrSnIfmgEgWVawmfypnvVXUb0QUNf3x6TQmh7G2WledwuMFqk-92FagxgRhK8exjzhj3piu-V1OjvFsigYK8tdVAYBZ2pK3s8cGAJMvU6UwASGjFGN8ZNYQjkrUiN-dJ2K66yDZLwaYhLB2pCw1WZxzygA_SG-3KTI1o_JUy_SsRqdXk7sTAjuTkitkMJJXwrDTQK4xG5ywpmf4"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60"></div>
+    <div class="glass-card rounded-xl overflow-hidden flex flex-col h-full">
+        <!-- Contenedor del video con click-to-play -->
+        <div class="aspect-[4/5] overflow-hidden relative cursor-pointer" 
+             onclick="playVideo(this)">
+            <!-- Thumbnail (imagen de preview) -->
+            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                 src="https://img.youtube.com/vi/lf7RMGRyz0o/maxresdefault.jpg" 
+                 alt="Animación Logo - Click para reproducir"
+                 id="thumbnail-aether">
+            
+            <!-- Botón de play overlay -->
+            <div class="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/20 transition-all duration-300">
+                <div class="w-20 h-20 rounded-full bg-primary-container/90 flex items-center justify-center backdrop-blur-sm hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-4xl text-on-primary-container">play_arrow</span>
+                </div>
+            </div>
+            
+            <!-- Video oculto (se muestra al hacer clic) -->
+            <iframe id="video-aether" 
+                    class="absolute inset-0 w-full h-full hidden"
+                    src="https://www.youtube.com/embed/lf7RMGRyz0o?autoplay=1&rel=0&controls=1&modestbranding=1"
+                    allow="autoplay; encrypted-media; fullscreen"
+                    allowfullscreen>
+            </iframe>
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60 pointer-events-none"></div>
+        </div>
+        
+        <!-- El resto del contenido igual -->
+        <div class="p-8">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="px-2 py-1 border border-primary-fixed-dim text-primary-fixed-dim font-label-sm text-label-sm rounded uppercase">Animación</span>
+                <span class="px-2 py-1 border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm rounded uppercase">2025</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-3">Juega Conmigo</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/70">Animación del logo "Juega Conmigo" para videos cortos.</p>
+        </div>
+    </div>
 </div>
-<div class="p-8">
-<div class="flex items-center gap-2 mb-4">
-<span class="px-2 py-1 border border-primary-fixed-dim text-primary-fixed-dim font-label-sm text-label-sm rounded uppercase">Interface</span>
-<span class="px-2 py-1 border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm rounded uppercase">2024</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Aether Interface</h3>
-<p class="font-body-md text-body-md text-on-surface-variant/70">Exploring the intersection of fluid motion and technical precision in digital workspace design.</p>
-</div>
-</div>
-</div>
-<!-- Project 2: Lumina Brand System -->
+
+
+
+<!-- Project 2: Revista Digital - Visor Interactivo -->
 <div class="group perspective-container">
-<div class="glass-card rounded-xl overflow-hidden flex flex-col h-full md:mt-12">
-<div class="aspect-[4/5] overflow-hidden relative">
-<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An abstract motion design background for Lumina Brand System showing flowing silk-like digital textures in iridescent silver and deep purple. The lighting is low-key with intense specular highlights creating a sense of three-dimensional depth and premium materiality. The visual style is cinematic, sophisticated, and artistic." decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH5pt7vZRGJFKHMwCYQ6EO2E9Ms_p9w6j4umx6PL5vQBcNMrsZlCTOQ9_2JHIcJ4Kl2JgFo6p2mOqSbI5b0KKsgBmDDKt8XmL7oqSG6ZhuTJv7DlOYoDaEhVwmwVkIU7xDqVm9RDm_acbS83cM5FM8GRsQNlyS0lHcP5AzwWkXwPM-nuuOCoO_2S7jRR46ZQqwxzSWgOM8kI2hY6Cj3bO-VvKKMbHi6Naeft2_xZsgA4RYfLbEIi7twFqTnxs2gY8c7oED8iVsn9BN"/>
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60"></div>
+    <div class="glass-card rounded-xl overflow-hidden flex flex-col h-full md:mt-12">
+        <!-- Contenedor del visor -->
+        <div class="aspect-[4/5] overflow-hidden relative bg-black/20">
+            <!-- Imagen actual -->
+            <img class="w-full h-full object-cover transition-all duration-700" 
+                 id="revista-img"
+                 src="img/Casa_de_Mexico.webp" 
+                 alt="Casa de México - Revista Digital"/>
+            
+            <!-- Overlay de navegación (aparece al hover/tap) -->
+            <div class="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <!-- Botón Anterior -->
+                <button onclick="cambiarPagina(-1)" 
+                        class="w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-primary-container/30 transition-all border border-outline-variant/30 hover:scale-110">
+                    <span class="material-symbols-outlined text-on-surface">chevron_left</span>
+                </button>
+                
+                <!-- Botón Siguiente -->
+                <button onclick="cambiarPagina(1)" 
+                        class="w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-primary-container/30 transition-all border border-outline-variant/30 hover:scale-110">
+                    <span class="material-symbols-outlined text-on-surface">chevron_right</span>
+                </button>
+            </div>
+            
+            <!-- Indicador de página -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" id="indicadores">
+                <span class="w-2 h-2 rounded-full bg-primary-container/50 transition-all" data-index="0"></span>
+                <!-- Se añadirán dinámicamente según las imágenes -->
+            </div>
+            
+            <!-- Badge interactivo -->
+            <div class="absolute top-4 right-4 px-3 py-1.5 bg-background/80 backdrop-blur-sm rounded-full border border-outline-variant/30 text-xs text-on-surface-variant flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">touch_app</span>
+                <span>Interactivo</span>
+            </div>
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-60 pointer-events-none"></div>
+        </div>
+        
+        <div class="p-8">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="px-2 py-1 border border-primary-fixed-dim text-primary-fixed-dim font-label-sm text-label-sm rounded uppercase">Diseño Editorial</span>
+                <span class="px-2 py-1 border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm rounded uppercase">2021</span>
+                <span class="px-2 py-1 border border-primary-fixed-dim/30 text-primary-fixed-dim/70 font-label-sm text-label-sm rounded uppercase flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">pages</span>
+                    <span id="contador-paginas">1/5</span>
+                </span>
+            </div>
+            <h3 class="font-headline-md text-headline-md text-on-surface mb-3">Casa de México</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant/70">Creación de revista Digital para el Instituto de los Mexicanos y Mexicanas en el Exterior</p>
+        </div>
+    </div>
 </div>
-<div class="p-8">
-<div class="flex items-center gap-2 mb-4">
-<span class="px-2 py-1 border border-primary-fixed-dim text-primary-fixed-dim font-label-sm text-label-sm rounded uppercase">Branding</span>
-<span class="px-2 py-1 border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm rounded uppercase">Experimental</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Lumina Brand System</h3>
-<p class="font-body-md text-body-md text-on-surface-variant/70">A generative visual identity system built on fluid dynamics and light-based typography.</p>
-</div>
-</div>
-</div>
+
+
 <!-- Project 3: Nova OS -->
 <div class="group perspective-container">
 <div class="glass-card rounded-xl overflow-hidden flex flex-col h-full">
@@ -220,8 +289,7 @@
 </div>
 </div>
 </section>
-
-      <!-- Call to Action -->
+<!-- Call to Action -->
 <!-- <section class="mt-32 max-w-container-max mx-auto px-margin-desktop text-center"> -->
 <section class="mt-32 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
     <div class="py-24 glass-card rounded-3xl relative overflow-hidden">
@@ -237,8 +305,6 @@
         </div>
     </div>
 </section>
-
-      
 </main>
 <!-- Footer Shell -->
 <footer class="w-full py-12 border-t border-outline-variant/10 bg-background">
@@ -279,5 +345,87 @@
             el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000');
             observer.observe(el);
         });
+
+
+        // Función para reproducir video al hacer clic
+function playVideo(container) {
+    const thumbnail = container.querySelector('img');
+    const video = container.querySelector('iframe');
+    const overlay = container.querySelector('.absolute.inset-0.flex');
+    
+    // Ocultar thumbnail y overlay
+    if (thumbnail) thumbnail.style.display = 'none';
+    if (overlay) overlay.style.display = 'none';
+    
+    // Mostrar y reproducir video
+    if (video) {
+        video.classList.remove('hidden');
+        // Forzar recarga para garantizar autoplay
+        const src = video.src;
+        video.src = src;
+    }
+}
+
+
+// Configuración del visor de revista
+const paginasRevista = [
+    'img/Casa_de_Mexico.webp',      // Página 1
+    'img/pagina2.webp',              // Página 2 - reemplaza con tu imagen
+    'img/pagina3.webp',              // Página 3 - reemplaza con tu imagen
+    'img/pagina4.webp',              // Página 4 - reemplaza con tu imagen
+    'img/pagina5.webp'               // Página 5 - reemplaza con tu imagen
+];
+
+let paginaActual = 0;
+
+function cambiarPagina(direccion) {
+    const nuevoIndex = paginaActual + direccion;
+    
+    // Validar límites
+    if (nuevoIndex < 0 || nuevoIndex >= paginasRevista.length) return;
+    
+    paginaActual = nuevoIndex;
+    
+    // Cambiar imagen con animación
+    const img = document.getElementById('revista-img');
+    img.style.opacity = '0.5';
+    
+    setTimeout(() => {
+        img.src = paginasRevista[paginaActual];
+        img.style.opacity = '1';
+    }, 200);
+    
+    // Actualizar indicadores
+    document.querySelectorAll('.absolute.bottom-4 .w-2.h-2').forEach((dot, index) => {
+        if (index === paginaActual) {
+            dot.classList.add('bg-primary-container');
+            dot.classList.remove('bg-primary-container/50');
+        } else {
+            dot.classList.remove('bg-primary-container');
+            dot.classList.add('bg-primary-container/50');
+        }
+    });
+    
+    // Actualizar contador
+    document.getElementById('contador-paginas').textContent = `${paginaActual + 1}/${paginasRevista.length}`;
+}
+
+// Inicializar indicadores
+document.addEventListener('DOMContentLoaded', function() {
+    const indicadores = document.getElementById('indicadores');
+    paginasRevista.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.className = `w-2 h-2 rounded-full transition-all ${index === 0 ? 'bg-primary-container' : 'bg-primary-container/50'}`;
+        dot.dataset.index = index;
+        indicadores.appendChild(dot);
+    });
+    
+    // También puedes navegar con teclado
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') cambiarPagina(-1);
+        if (e.key === 'ArrowRight') cambiarPagina(1);
+    });
+});
+
     </script>
 </body></html>
